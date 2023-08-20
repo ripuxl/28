@@ -56,10 +56,9 @@
          <p>Bacaan lainnya:</p>
         </div>
       
-        {% assign posts = site.posts | where_exp:"post", "post.url != page.url" | sample:10 %}
-        {% for post in posts %}
+        
           {% include rp.html %}
-        {% endfor %}
+       
       
        
           <div class="date">
