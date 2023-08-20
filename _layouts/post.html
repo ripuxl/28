@@ -51,11 +51,19 @@
         <div class="entry">
           <a href='https://ad1uqnq.blogspot.com' title='ad1'><amp-img src="https://img.uqnq.my.id/ad1.png" width="600" height="600" layout="responsive"></amp-img></a> 
 
-         Kunjungi artikel tentang {{ page.title }} dengan mengklik link di berikut : {{ content }}
+         Kunjungi artikel tentang {{ page.title }} dengan mengklik link berikut : {{ content }}
                   
          <p>Bacaan lainnya:</p>
         </div>
-      
+      <div class="Previous-next">
+  {% if page.previous.url %}
+    <a class="previous" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+  {% endif %}
+       <p></p> 
+  {% if page.next.url %}
+    <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+  {% endif %}
+</div>
         
     <ul>
         {% assign posts = site.posts | where_exp:"post", "post.url != page.url" | sample:10 %}
